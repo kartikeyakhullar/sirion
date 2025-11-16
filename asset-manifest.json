@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/sirion/static/css/main.a8f12022.css",
+    "main.js": "/sirion/static/js/main.020ea086.js",
+    "static/js/453.601835c1.chunk.js": "/sirion/static/js/453.601835c1.chunk.js",
+    "index.html": "/sirion/index.html",
+    "main.a8f12022.css.map": "/sirion/static/css/main.a8f12022.css.map",
+    "main.020ea086.js.map": "/sirion/static/js/main.020ea086.js.map",
+    "453.601835c1.chunk.js.map": "/sirion/static/js/453.601835c1.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a8f12022.css",
+    "static/js/main.020ea086.js"
+  ]
+}

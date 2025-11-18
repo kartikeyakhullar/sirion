@@ -1,5 +1,5 @@
 import React, { useState, Suspense, lazy } from 'react';
-import { Zap, Tag, ArrowRight, Home, TrendingUp, Eye, BarChart3, Target, Lightbulb, Shield, DollarSign, Calendar, GitBranch } from 'lucide-react';
+import { Zap, Tag, ArrowRight, Home, TrendingUp, Eye, BarChart3, Target, Lightbulb, Shield, DollarSign, Calendar, GitBranch, Users, AlertCircle } from 'lucide-react';
 
 // Lazy load the feature components for better performance
 const AINavigationCopilot = lazy(() => import('./sirion-negotiation-copilot'));
@@ -61,9 +61,9 @@ export default function SirionAISuite() {
           {/* AI Negotiation Copilot Card */}
           <div 
             onClick={() => setSelectedFeature('copilot')}
-            className="group bg-white rounded-2xl shadow-xl border-2 border-transparent hover:border-blue-500 hover:shadow-2xl transition-all cursor-pointer transform hover:scale-105 duration-300"
+            className="group bg-white rounded-2xl shadow-xl border-2 border-transparent hover:border-blue-500 hover:shadow-2xl transition-all cursor-pointer transform hover:scale-105 duration-300 flex flex-col"
           >
-            <div className="p-8">
+            <div className="p-8 flex-1 flex flex-col">
               {/* Icon & Title */}
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center space-x-4">
@@ -84,59 +84,89 @@ export default function SirionAISuite() {
                 market benchmarks, and strategic recommendations that predict outcomes with 85% accuracy.
               </p>
 
+              {/* NEW Badge */}
+              <div className="mb-4 inline-block px-3 py-1 bg-gradient-to-r from-purple-500 to-pink-500 text-white text-xs font-bold rounded-full">
+                ✨ ADDRESSES KEY GAPS IN CURRENT CLM
+              </div>
+
               {/* Key Features */}
               <div className="space-y-3 mb-6">
                 <div className="flex items-start space-x-3">
                   <Shield className="text-blue-600 mt-1 flex-shrink-0" size={20} />
                   <div>
-                    <div className="font-semibold text-gray-900">Supplier Intelligence Profile</div>
-                    <div className="text-sm text-gray-600">Financial health, negotiation patterns, key contacts</div>
+                    <div className="font-semibold text-gray-900">Supplier Intelligence Profile <span className="text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full ml-2">NEW</span></div>
+                    <div className="text-sm text-gray-600">Financial health (72/100), negotiation history, key contacts, risk indicators</div>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <Users className="text-blue-600 mt-1 flex-shrink-0" size={20} />
+                  <div>
+                    <div className="font-semibold text-gray-900">Competitor Intelligence <span className="text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full ml-2">NEW</span></div>
+                    <div className="text-sm text-gray-600">How competitors negotiate with this supplier, pricing benchmarks, leverage points</div>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <Target className="text-blue-600 mt-1 flex-shrink-0" size={20} />
+                  <div>
+                    <div className="font-semibold text-gray-900">Negotiation Tactics Playbook <span className="text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded-full ml-2">NEW</span></div>
+                    <div className="text-sm text-gray-600">Proven strategies, opening positions, fallback options, timing recommendations</div>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
                   <BarChart3 className="text-blue-600 mt-1 flex-shrink-0" size={20} />
                   <div>
                     <div className="font-semibold text-gray-900">Market Benchmarking</div>
-                    <div className="text-sm text-gray-600">Compare against 47 similar contracts</div>
+                    <div className="text-sm text-gray-600">47 similar contracts analyzed, industry pricing trends, terms comparison</div>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
                   <TrendingUp className="text-blue-600 mt-1 flex-shrink-0" size={20} />
                   <div>
-                    <div className="font-semibold text-gray-900">Predictive Analytics</div>
-                    <div className="text-sm text-gray-600">70-85% success rate predictions</div>
+                    <div className="font-semibold text-gray-900">Predictive Success Analytics</div>
+                    <div className="text-sm text-gray-600">85% accuracy on acceptance probability, optimal concession paths</div>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
                   <Lightbulb className="text-blue-600 mt-1 flex-shrink-0" size={20} />
                   <div>
-                    <div className="font-semibold text-gray-900">Live Negotiation Guide</div>
-                    <div className="text-sm text-gray-600">Real-time "what to say next" coaching</div>
+                    <div className="font-semibold text-gray-900">Live Negotiation Coaching</div>
+                    <div className="text-sm text-gray-600">Real-time "what to say next," risk alerts, alternative approaches</div>
                   </div>
                 </div>
               </div>
 
-              {/* Value Props */}
-              <div className="grid grid-cols-2 gap-3 mb-6">
-                <div className="bg-green-50 p-3 rounded-lg border border-green-200">
-                  <div className="text-2xl font-bold text-green-600 mb-1">$222K</div>
-                  <div className="text-xs text-gray-600">Avg. Savings</div>
+              <div className="mt-auto">
+                {/* Gap Addressed */}
+                <div className="mb-6 bg-gradient-to-br from-blue-50 to-indigo-50 p-4 rounded-lg border-2 border-blue-200">
+                  <div className="font-bold text-sm text-blue-900 mb-2">🎯 Addresses Critical Gap:</div>
+                  <div className="text-xs text-gray-700">
+                    Current CLM systems provide <span className="font-semibold">extraction</span> but lack <span className="font-semibold text-blue-600">strategic negotiation intelligence</span>. 
+                    This copilot adds competitor insights, proven tactics, and predictive analytics to drive better outcomes.
+                  </div>
                 </div>
-                <div className="bg-blue-50 p-3 rounded-lg border border-blue-200">
-                  <div className="text-2xl font-bold text-blue-600 mb-1">60%</div>
-                  <div className="text-xs text-gray-600">Faster Close</div>
+
+                {/* Value Props */}
+                <div className="grid grid-cols-2 gap-3 mb-6">
+                  <div className="bg-green-50 p-3 rounded-lg border border-green-200">
+                    <div className="text-2xl font-bold text-green-600 mb-1">$222K</div>
+                    <div className="text-xs text-gray-600">Avg. Savings</div>
+                  </div>
+                  <div className="bg-blue-50 p-3 rounded-lg border border-blue-200">
+                    <div className="text-2xl font-bold text-blue-600 mb-1">60%</div>
+                    <div className="text-xs text-gray-600">Faster Close</div>
+                  </div>
                 </div>
-              </div>
 
-              {/* CTA */}
-              <button className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-4 rounded-xl font-bold text-lg hover:from-blue-700 hover:to-indigo-700 transition-all shadow-lg hover:shadow-xl flex items-center justify-center space-x-2 group">
-                <span>Launch Negotiation Copilot</span>
-                <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
-              </button>
+                {/* CTA */}
+                <button className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-4 rounded-xl font-bold text-lg hover:from-blue-700 hover:to-indigo-700 transition-all shadow-lg hover:shadow-xl flex items-center justify-center space-x-2 group">
+                  <span>Launch Negotiation Copilot</span>
+                  <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
+                </button>
 
-              <div className="mt-4 text-center">
-                <span className="text-sm text-gray-500">Best for: </span>
-                <span className="text-sm font-semibold text-gray-700">Procurement, Contract Negotiators</span>
+                <div className="mt-4 text-center">
+                  <span className="text-sm text-gray-500">Best for: </span>
+                  <span className="text-sm font-semibold text-gray-700">Procurement, Contract Negotiators</span>
+                </div>
               </div>
             </div>
           </div>
@@ -144,9 +174,9 @@ export default function SirionAISuite() {
           {/* Metadata Navigator Card */}
           <div 
             onClick={() => setSelectedFeature('navigator')}
-            className="group bg-white rounded-2xl shadow-xl border-2 border-transparent hover:border-teal-500 hover:shadow-2xl transition-all cursor-pointer transform hover:scale-105 duration-300"
+            className="group bg-white rounded-2xl shadow-xl border-2 border-transparent hover:border-teal-500 hover:shadow-2xl transition-all cursor-pointer transform hover:scale-105 duration-300 flex flex-col"
           >
-            <div className="p-8">
+            <div className="p-8 flex-1 flex flex-col">
               {/* Icon & Title */}
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center space-x-4">
@@ -167,59 +197,89 @@ export default function SirionAISuite() {
                 visualize timelines, map relationships, and compare contracts with AI-powered intelligence.
               </p>
 
+              {/* NEW Badge */}
+              <div className="mb-4 inline-block px-3 py-1 bg-gradient-to-r from-orange-500 to-red-500 text-white text-xs font-bold rounded-full">
+                ✨ NEXT-GEN METADATA INTELLIGENCE
+              </div>
+
               {/* Key Features */}
               <div className="space-y-3 mb-6">
                 <div className="flex items-start space-x-3">
                   <Eye className="text-teal-600 mt-1 flex-shrink-0" size={20} />
                   <div>
-                    <div className="font-semibold text-gray-900">Visual Navigation</div>
-                    <div className="text-sm text-gray-600">Click-to-clause interactive dashboard</div>
+                    <div className="font-semibold text-gray-900">Visual Click-to-Clause Navigation <span className="text-xs bg-teal-100 text-teal-700 px-2 py-0.5 rounded-full ml-2">NEW</span></div>
+                    <div className="text-sm text-gray-600">Interactive dashboard - click any metadata to jump directly to source clause</div>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <AlertCircle className="text-teal-600 mt-1 flex-shrink-0" size={20} />
+                  <div>
+                    <div className="font-semibold text-gray-900">Automated Risk Flagging <span className="text-xs bg-red-100 text-red-700 px-2 py-0.5 rounded-full ml-2">NEW</span></div>
+                    <div className="text-sm text-gray-600">AI detects unusual terms, missing clauses, compliance gaps automatically</div>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
                   <Calendar className="text-teal-600 mt-1 flex-shrink-0" size={20} />
                   <div>
-                    <div className="font-semibold text-gray-900">Timeline Visualization</div>
-                    <div className="text-sm text-gray-600">All dates and deadlines on interactive timeline</div>
+                    <div className="font-semibold text-gray-900">Smart Timeline Visualization</div>
+                    <div className="text-sm text-gray-600">24 critical dates on interactive timeline with deadline tracking & alerts</div>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
                   <GitBranch className="text-teal-600 mt-1 flex-shrink-0" size={20} />
                   <div>
-                    <div className="font-semibold text-gray-900">Relationship Mapping</div>
-                    <div className="text-sm text-gray-600">Visual connections between clauses</div>
+                    <div className="font-semibold text-gray-900">Relationship Mapping <span className="text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full ml-2">NEW</span></div>
+                    <div className="text-sm text-gray-600">Visual graph showing how clauses connect and affect each other</div>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
                   <BarChart3 className="text-teal-600 mt-1 flex-shrink-0" size={20} />
                   <div>
-                    <div className="font-semibold text-gray-900">Cross-Contract Comparison</div>
-                    <div className="text-sm text-gray-600">Side-by-side analysis of multiple contracts</div>
+                    <div className="font-semibold text-gray-900">Cross-Contract Anomaly Detection</div>
+                    <div className="text-sm text-gray-600">Compare 3+ contracts instantly, spot inconsistencies, identify outliers</div>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <Shield className="text-teal-600 mt-1 flex-shrink-0" size={20} />
+                  <div>
+                    <div className="font-semibold text-gray-900">Portfolio-Wide Insights</div>
+                    <div className="text-sm text-gray-600">Aggregate analytics across all contracts, trend analysis, risk exposure</div>
                   </div>
                 </div>
               </div>
 
-              {/* Value Props */}
-              <div className="grid grid-cols-2 gap-3 mb-6">
-                <div className="bg-teal-50 p-3 rounded-lg border border-teal-200">
-                  <div className="text-2xl font-bold text-teal-600 mb-1">247</div>
-                  <div className="text-xs text-gray-600">Metadata Points</div>
+              <div className="mt-auto">
+                {/* Gap Addressed */}
+                <div className="mb-6 bg-gradient-to-br from-teal-50 to-cyan-50 p-4 rounded-lg border-2 border-teal-200">
+                  <div className="font-bold text-sm text-teal-900 mb-2">🎯 Addresses Critical Gap:</div>
+                  <div className="text-xs text-gray-700">
+                    Traditional extraction creates <span className="font-semibold">data silos</span> without context. 
+                    This navigator adds <span className="font-semibold text-teal-600">visual intelligence, relationship mapping, and anomaly detection</span> to transform data into actionable insights.
+                  </div>
                 </div>
-                <div className="bg-orange-50 p-3 rounded-lg border border-orange-200">
-                  <div className="text-2xl font-bold text-orange-600 mb-1">90%</div>
-                  <div className="text-xs text-gray-600">Time Saved</div>
+
+                {/* Value Props */}
+                <div className="grid grid-cols-2 gap-3 mb-6">
+                  <div className="bg-teal-50 p-3 rounded-lg border border-teal-200">
+                    <div className="text-2xl font-bold text-teal-600 mb-1">247</div>
+                    <div className="text-xs text-gray-600">Metadata Points</div>
+                  </div>
+                  <div className="bg-orange-50 p-3 rounded-lg border border-orange-200">
+                    <div className="text-2xl font-bold text-orange-600 mb-1">90%</div>
+                    <div className="text-xs text-gray-600">Time Saved</div>
+                  </div>
                 </div>
-              </div>
 
-              {/* CTA */}
-              <button className="w-full bg-gradient-to-r from-teal-600 to-cyan-600 text-white py-4 rounded-xl font-bold text-lg hover:from-teal-700 hover:to-cyan-700 transition-all shadow-lg hover:shadow-xl flex items-center justify-center space-x-2 group">
-                <span>Launch Metadata Navigator</span>
-                <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
-              </button>
+                {/* CTA */}
+                <button className="w-full bg-gradient-to-r from-teal-600 to-cyan-600 text-white py-4 rounded-xl font-bold text-lg hover:from-teal-700 hover:to-cyan-700 transition-all shadow-lg hover:shadow-xl flex items-center justify-center space-x-2 group">
+                  <span>Launch Metadata Navigator</span>
+                  <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
+                </button>
 
-              <div className="mt-4 text-center">
-                <span className="text-sm text-gray-500">Best for: </span>
-                <span className="text-sm font-semibold text-gray-700">Legal Ops, Compliance, Analysis</span>
+                <div className="mt-4 text-center">
+                  <span className="text-sm text-gray-500">Best for: </span>
+                  <span className="text-sm font-semibold text-gray-700">Legal Ops, Compliance, Analysis</span>
+                </div>
               </div>
             </div>
           </div>

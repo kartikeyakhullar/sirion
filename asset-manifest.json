@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/sirion/static/css/main.b0c3a111.css",
-    "main.js": "/sirion/static/js/main.0eea8b8d.js",
-    "static/js/999.a4bfc7cf.chunk.js": "/sirion/static/js/999.a4bfc7cf.chunk.js",
-    "static/js/406.b41e6522.chunk.js": "/sirion/static/js/406.b41e6522.chunk.js",
+    "main.css": "/sirion/static/css/main.849f1bee.css",
+    "main.js": "/sirion/static/js/main.509f1882.js",
+    "static/js/999.51bc3978.chunk.js": "/sirion/static/js/999.51bc3978.chunk.js",
+    "static/js/744.1cd6d87f.chunk.js": "/sirion/static/js/744.1cd6d87f.chunk.js",
     "static/js/453.601835c1.chunk.js": "/sirion/static/js/453.601835c1.chunk.js",
     "index.html": "/sirion/index.html",
-    "main.b0c3a111.css.map": "/sirion/static/css/main.b0c3a111.css.map",
-    "main.0eea8b8d.js.map": "/sirion/static/js/main.0eea8b8d.js.map",
-    "999.a4bfc7cf.chunk.js.map": "/sirion/static/js/999.a4bfc7cf.chunk.js.map",
-    "406.b41e6522.chunk.js.map": "/sirion/static/js/406.b41e6522.chunk.js.map",
+    "main.849f1bee.css.map": "/sirion/static/css/main.849f1bee.css.map",
+    "main.509f1882.js.map": "/sirion/static/js/main.509f1882.js.map",
+    "999.51bc3978.chunk.js.map": "/sirion/static/js/999.51bc3978.chunk.js.map",
+    "744.1cd6d87f.chunk.js.map": "/sirion/static/js/744.1cd6d87f.chunk.js.map",
     "453.601835c1.chunk.js.map": "/sirion/static/js/453.601835c1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b0c3a111.css",
-    "static/js/main.0eea8b8d.js"
+    "static/css/main.849f1bee.css",
+    "static/js/main.509f1882.js"
   ]
 }
